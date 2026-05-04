@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
 }
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { getYoutubeEmbedUrl } from "@/lib/youtube";
 
 // POST — tambah video YouTube

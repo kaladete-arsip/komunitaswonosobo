@@ -4,7 +4,7 @@ import { client } from "../../../../../sanity/lib/client";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 
 // GET — ambil semua post komunitas ini
 export async function GET(req: NextRequest) {

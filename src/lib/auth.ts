@@ -1,6 +1,6 @@
 // src/lib/auth.ts
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { prisma } from "./prisma";
 
 // Ambil session user saat ini

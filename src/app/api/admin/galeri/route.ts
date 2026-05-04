@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
 }
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 
 // POST — upload foto baru ke Vercel Blob, simpan referensi ke Sanity
 export async function POST(req: NextRequest) {
