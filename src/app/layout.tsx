@@ -4,8 +4,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Jaya Sanga Nusantara",
-  description: "Platform komunitas dan yayasan Indonesia",
+  title: "Komunitas Wonosobo",
+  description: "Platform komunitas untuk berbagi informasi, acara, dan kegiatan di Wonosobo.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

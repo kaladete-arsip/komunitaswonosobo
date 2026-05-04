@@ -133,7 +133,7 @@ export default async function HomePage() {
             lineHeight: 1.75,
             marginBottom: "2.5rem",
           }}>
-            Platform digital untuk komunitas dan yayasan di Wonosobo.
+            Platform digital untuk komunitas di Wonosobo.
             Dikelola bersama oleh{" "}
             <span style={{ color: "#eab308", fontWeight: 600 }}>jayasanganusantara.or.id</span>
           </p>
@@ -141,8 +141,8 @@ export default async function HomePage() {
           <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
             {[
               { label: "Komunitas Aktif", value: data.length.toString() },
-              { label: "Platform", value: "Gratis" },
-              { label: "Pengelola", value: "JSN" },
+              { label: "Platform", value: "Swadaya" },
+              { label: "Pengelola", value: "jayasanganusantara.or.id" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "#eab308" }}>
@@ -356,7 +356,7 @@ export default async function HomePage() {
             </h3>
             <p style={{ fontSize: "0.875rem", color: "#6b7280", lineHeight: 1.75, marginBottom: "1.75rem" }}>
               Bergabung dengan platform komunitas Wonosobo.
-              Gratis, mudah, dan dikelola sendiri oleh pengurus komunitas.
+              Swadaya, mudah, dan dikelola sendiri oleh pengurus komunitas.
             </p>
             <a
               href="https://jayasanganusantara.or.id"
@@ -387,7 +387,7 @@ export default async function HomePage() {
             © {new Date().getFullYear()} Komunitas Wonosobo ·{" "}
             <span style={{ color: "#eab308" }}>Jaya Sanga Nusantara</span>
           </p>
-          <p style={{ fontSize: "0.8rem", color: "#2a2a2a" }}>
+          <p style={{ fontSize: "0.8rem", color: "#fcf9f2" }}>
             komunitaswonosobo.org
           </p>
         </div>
