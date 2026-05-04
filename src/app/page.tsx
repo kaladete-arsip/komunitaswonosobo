@@ -20,6 +20,59 @@ export default async function HomePage() {
   return (
     <main style={{ background: "#0a0a0a", minHeight: "100vh", color: "white" }}>
 
+      <style>{`
+        .komunitas-card {
+          background: #111;
+          border: 1px solid #222;
+          border-radius: 12px;
+          padding: 1.5rem;
+          cursor: pointer;
+          transition: all 0.2s;
+          position: relative;
+          overflow: hidden;
+          display: block;
+          text-decoration: none;
+          color: inherit;
+        }
+        .komunitas-card:hover {
+          border-color: #eab308;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(234,179,8,0.1);
+        }
+        .cta-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #eab308;
+          color: #0a0a0a;
+          font-weight: 700;
+          padding: 0.7rem 1.5rem;
+          border-radius: 8px;
+          font-size: 0.875rem;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .cta-btn:hover {
+          background: #ca8a04;
+          transform: translateY(-1px);
+        }
+        .sosmed-btn {
+          display: inline-block;
+          background: rgba(234,179,8,0.12);
+          border: 1px solid rgba(234,179,8,0.25);
+          color: #eab308;
+          padding: 0.35rem 0.9rem;
+          border-radius: 9999px;
+          font-size: 0.78rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .sosmed-btn:hover {
+          background: rgba(234,179,8,0.2);
+        }
+      `}</style>
+
       {/* ── HERO ────────────────────────────────────────────── */}
       <section style={{
         background: "linear-gradient(160deg, #111111 0%, #1a1a0a 60%, #0a0a0a 100%)",
@@ -28,7 +81,6 @@ export default async function HomePage() {
         overflow: "hidden",
         borderBottom: "1px solid #222",
       }}>
-        {/* Decorative background elements */}
         <div style={{
           position: "absolute", top: -100, right: -100,
           width: 500, height: 500,
@@ -43,7 +95,6 @@ export default async function HomePage() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          {/* Badge */}
           <div style={{
             display: "inline-flex", alignItems: "center", gap: "0.5rem",
             background: "rgba(234,179,8,0.12)",
@@ -68,14 +119,9 @@ export default async function HomePage() {
             letterSpacing: "-0.02em",
           }}>
             Komunitas{" "}
-            <span style={{
-              color: "#eab308",
-              position: "relative",
-            }}>
-              Wonosobo
-            </span>
+            <span style={{ color: "#eab308" }}>Wonosobo</span>
             <br />
-            <span style={{ color: "#a3a3a3", fontWeight: 400, fontSize: "0.7em" }}>
+            <span style={{ color: "#a3a3a3", fontWeight: 400, fontSize: "0.65em" }}>
               Satu Platform, Banyak Komunitas
             </span>
           </h1>
@@ -92,7 +138,6 @@ export default async function HomePage() {
             <span style={{ color: "#eab308", fontWeight: 600 }}>jayasanganusantara.or.id</span>
           </p>
 
-          {/* Stats */}
           <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
             {[
               { label: "Komunitas Aktif", value: data.length.toString() },
@@ -112,10 +157,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── SEARCH BAR ──────────────────────────────────────── */}
+      {/* ── SEARCH BAR (dekoratif) ───────────────────────────── */}
       <section style={{
         background: "#111",
-        borderBottom: "1px solid #222",
+        borderBottom: "1px solid #1f1f1f",
         padding: "1.25rem 0",
       }}>
         <div className="container" style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
@@ -123,18 +168,18 @@ export default async function HomePage() {
             flex: 1, minWidth: 200,
             display: "flex", alignItems: "center", gap: "0.75rem",
             background: "#1a1a1a",
-            border: "1px solid #333",
+            border: "1px solid #2a2a2a",
             borderRadius: 8,
             padding: "0.6rem 1rem",
           }}>
-            <span style={{ color: "#6b7280" }}>🔍</span>
-            <span style={{ color: "#6b7280", fontSize: "0.9rem" }}>
+            <span style={{ color: "#555" }}>🔍</span>
+            <span style={{ color: "#555", fontSize: "0.9rem" }}>
               Cari komunitas di Wonosobo...
             </span>
           </div>
           <div style={{
             display: "flex", alignItems: "center", gap: "0.5rem",
-            color: "#6b7280", fontSize: "0.85rem",
+            color: "#555", fontSize: "0.85rem",
           }}>
             <span>Total:</span>
             <span style={{
@@ -155,17 +200,25 @@ export default async function HomePage() {
       <section style={{ padding: "3rem 0" }}>
         <div className="container">
 
-          {/* Section header */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.75rem", flexWrap: "wrap", gap: "1rem" }}>
-            <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#e5e5e5", letterSpacing: "0.02em" }}>
-              DIREKTORI KOMUNITAS
+          <div style={{
+            display: "flex", alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "1.75rem",
+            flexWrap: "wrap", gap: "1rem",
+          }}>
+            <h2 style={{
+              fontSize: "0.8rem", fontWeight: 700,
+              color: "#555", letterSpacing: "0.1em",
+              textTransform: "uppercase",
+            }}>
+              Direktori Komunitas
             </h2>
             <div style={{
               height: 1, flex: 1, minWidth: 40,
-              background: "linear-gradient(to right, #333, transparent)",
+              background: "linear-gradient(to right, #222, transparent)",
               margin: "0 1rem",
             }} />
-            <span style={{ color: "#6b7280", fontSize: "0.85rem" }}>
+            <span style={{ color: "#444", fontSize: "0.8rem" }}>
               {data.length} terdaftar
             </span>
           </div>
@@ -174,12 +227,12 @@ export default async function HomePage() {
             <div style={{
               textAlign: "center",
               padding: "5rem 2rem",
-              border: "1px dashed #333",
+              border: "1px dashed #222",
               borderRadius: 12,
-              color: "#6b7280",
+              color: "#555",
             }}>
               <div style={{ fontSize: "3rem", marginBottom: "1rem", opacity: 0.4 }}>🏘️</div>
-              <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "#a3a3a3" }}>
+              <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "#777" }}>
                 Belum ada komunitas terdaftar
               </p>
               <p style={{ fontSize: "0.85rem" }}>
@@ -195,106 +248,84 @@ export default async function HomePage() {
               {data.map((k) => {
                 const warna = k.warnaPrimer || "#16a34a";
                 return (
-                  <Link key={k._id} href={`/${k.slug.current}`} style={{ display: "block" }}>
+                  <Link key={k._id} href={`/${k.slug.current}`} className="komunitas-card">
+                    {/* Color accent bar */}
                     <div style={{
-                      background: "#111",
-                      border: "1px solid #222",
-                      borderRadius: 12,
-                      padding: "1.5rem",
-                      cursor: "pointer",
-                      transition: "all 0.2s",
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLDivElement).style.borderColor = "#eab308";
-                      (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLDivElement).style.borderColor = "#222";
-                      (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-                    }}
-                    >
-                      {/* Color accent bar */}
+                      position: "absolute", top: 0, left: 0, right: 0,
+                      height: 3,
+                      background: warna,
+                    }} />
+
+                    <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
                       <div style={{
-                        position: "absolute", top: 0, left: 0, right: 0,
-                        height: 3,
-                        background: warna,
-                      }} />
-
-                      <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-                        {/* Avatar */}
-                        <div style={{
-                          width: 52, height: 52,
-                          borderRadius: 10,
-                          background: `${warna}22`,
-                          border: `1px solid ${warna}44`,
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          color: warna,
-                          fontWeight: 800,
-                          fontSize: "1.4rem",
-                          flexShrink: 0,
-                        }}>
-                          {k.nama[0]}
-                        </div>
-
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <h3 style={{
-                            fontWeight: 700,
-                            fontSize: "0.95rem",
-                            color: "#f5f5f5",
-                            marginBottom: "0.3rem",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                          }}>
-                            {k.nama}
-                          </h3>
-                          {k.tagline && (
-                            <p style={{
-                              fontSize: "0.8rem",
-                              color: "#6b7280",
-                              lineHeight: 1.5,
-                              display: "-webkit-box",
-                              WebkitLineClamp: 2,
-                              WebkitBoxOrient: "vertical",
-                              overflow: "hidden",
-                            }}>
-                              {k.tagline}
-                            </p>
-                          )}
-                        </div>
+                        width: 52, height: 52,
+                        borderRadius: 10,
+                        background: `${warna}22`,
+                        border: `1px solid ${warna}44`,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        color: warna,
+                        fontWeight: 800,
+                        fontSize: "1.4rem",
+                        flexShrink: 0,
+                      }}>
+                        {k.nama[0]}
                       </div>
 
-                      {/* Footer */}
-                      <div style={{
-                        marginTop: "1.25rem",
-                        paddingTop: "0.85rem",
-                        borderTop: "1px solid #1f1f1f",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}>
-                        <span style={{
-                          fontSize: "0.75rem",
-                          color: "#444",
-                          fontFamily: "monospace",
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <h3 style={{
+                          fontWeight: 700,
+                          fontSize: "0.95rem",
+                          color: "#f5f5f5",
+                          marginBottom: "0.3rem",
+                          whiteSpace: "nowrap",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
-                          whiteSpace: "nowrap",
-                          maxWidth: "70%",
                         }}>
-                          /{k.slug.current}
-                        </span>
-                        <span style={{
-                          fontSize: "0.78rem",
-                          color: "#eab308",
-                          fontWeight: 600,
-                          flexShrink: 0,
-                        }}>
-                          Lihat →
-                        </span>
+                          {k.nama}
+                        </h3>
+                        {k.tagline && (
+                          <p style={{
+                            fontSize: "0.8rem",
+                            color: "#6b7280",
+                            lineHeight: 1.5,
+                            overflow: "hidden",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                          }}>
+                            {k.tagline}
+                          </p>
+                        )}
                       </div>
+                    </div>
+
+                    <div style={{
+                      marginTop: "1.25rem",
+                      paddingTop: "0.85rem",
+                      borderTop: "1px solid #1f1f1f",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}>
+                      <span style={{
+                        fontSize: "0.73rem",
+                        color: "#333",
+                        fontFamily: "monospace",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        maxWidth: "70%",
+                      }}>
+                        /{k.slug.current}
+                      </span>
+                      <span style={{
+                        fontSize: "0.78rem",
+                        color: "#eab308",
+                        fontWeight: 600,
+                        flexShrink: 0,
+                      }}>
+                        Lihat →
+                      </span>
                     </div>
                   </Link>
                 );
@@ -304,26 +335,26 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA JOIN ────────────────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────── */}
       <section style={{
         background: "#111",
-        borderTop: "1px solid #1f1f1f",
+        borderTop: "1px solid #1a1a1a",
         padding: "3.5rem 0",
       }}>
         <div className="container" style={{ textAlign: "center" }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(234,179,8,0.08)",
-            border: "1px solid rgba(234,179,8,0.2)",
-            borderRadius: 12,
-            padding: "2rem 3rem",
-            maxWidth: 500,
+            background: "rgba(234,179,8,0.06)",
+            border: "1px solid rgba(234,179,8,0.15)",
+            borderRadius: 16,
+            padding: "2.5rem 3rem",
+            maxWidth: 520,
           }}>
-            <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>🌿</div>
-            <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem", color: "#f5f5f5" }}>
+            <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>🌿</div>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.6rem", color: "#f5f5f5" }}>
               Daftarkan Komunitas Anda
             </h3>
-            <p style={{ fontSize: "0.875rem", color: "#6b7280", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "0.875rem", color: "#6b7280", lineHeight: 1.75, marginBottom: "1.75rem" }}>
               Bergabung dengan platform komunitas Wonosobo.
               Gratis, mudah, dan dikelola sendiri oleh pengurus komunitas.
             </p>
@@ -331,18 +362,7 @@ export default async function HomePage() {
               href="https://jayasanganusantara.or.id"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                background: "#eab308",
-                color: "#0a0a0a",
-                fontWeight: 700,
-                padding: "0.7rem 1.5rem",
-                borderRadius: 8,
-                fontSize: "0.875rem",
-                textDecoration: "none",
-              }}
+              className="cta-btn"
             >
               Hubungi Jaya Sanga Nusantara →
             </a>
@@ -352,7 +372,7 @@ export default async function HomePage() {
 
       {/* ── FOOTER ──────────────────────────────────────────── */}
       <footer style={{
-        borderTop: "1px solid #1a1a1a",
+        borderTop: "1px solid #151515",
         padding: "1.5rem 0",
         background: "#0a0a0a",
       }}>
@@ -363,11 +383,11 @@ export default async function HomePage() {
           flexWrap: "wrap",
           gap: "0.75rem",
         }}>
-          <p style={{ fontSize: "0.8rem", color: "#444" }}>
+          <p style={{ fontSize: "0.8rem", color: "#333" }}>
             © {new Date().getFullYear()} Komunitas Wonosobo ·{" "}
             <span style={{ color: "#eab308" }}>Jaya Sanga Nusantara</span>
           </p>
-          <p style={{ fontSize: "0.8rem", color: "#333" }}>
+          <p style={{ fontSize: "0.8rem", color: "#2a2a2a" }}>
             komunitaswonosobo.org
           </p>
         </div>
