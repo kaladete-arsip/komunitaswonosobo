@@ -1,4 +1,3 @@
-cat > src/lib/authOptions.ts << 'EOF'
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
@@ -25,4 +24,3 @@ export const authOptions: NextAuthOptions = {
     error: "/auth/error",
   },
 };
-EOF
